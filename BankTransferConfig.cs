@@ -19,7 +19,6 @@ namespace Modul9
         public string ReadConfigFile()
         {
             return File.ReadAllText(filepath);
-
         }
 
         public void WriteConfigFile()
@@ -32,7 +31,7 @@ namespace Modul9
             config = new Config(
                 "en",
                 new Transfer (25000000, 6500, 15000),
-                ["RTO", "(real-time)", "SKN", "RTGS", "BI", "FAST"],
+                ["RTO (real-time)", "SKN", "RTGS", "BI", "FAST"],
                 new Confirmation ("yes", "ya")
             );
         }
