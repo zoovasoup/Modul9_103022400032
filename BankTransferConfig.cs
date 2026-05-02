@@ -29,7 +29,7 @@ namespace Modul9
         public void SetDefault()
         {
             config = new Config(
-                "en",
+                "id",
                 new Transfer (25000000, 6500, 15000),
                 ["RTO (real-time)", "SKN", "RTGS", "BI", "FAST"],
                 new Confirmation ("yes", "ya")

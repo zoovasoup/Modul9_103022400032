@@ -35,6 +35,7 @@ namespace Modul9
                 {
                     fees = fee.high_fee;
                 }
+                Console.WriteLine("Transfer fee = " + fees);
                 Console.WriteLine("Amount = " + (amount += fees) );
 
                 int count = 1;
@@ -56,6 +57,43 @@ namespace Modul9
                     Console.WriteLine("Transfer is canceled");
                 }
 
+            } else
+            {
+                Console.WriteLine("Masukan jumlah uang yang akan di transfer: ");
+                string amountS = Console.ReadLine();
+                double amount = Convert.ToDouble(amountS);
+                fee = bank.config.transfer;
+                if (amount <= bank.config.transfer.threshold)
+                {
+                    fees = fee.low_fee;
+                }
+                else
+                {
+                    fees = fee.high_fee;
+                }
+                Console.WriteLine("biaya transfer = " + fees);
+                
+                Console.WriteLine("total biaya = " + (amount += fees));
+
+                int count = 1;
+                foreach (String item in bank.config.methods)
+                {
+                    Console.WriteLine(count + " " + item);
+                    count++;
+                }
+                Console.WriteLine("pilih metode transfer = ");
+                string transferMethod = Console.ReadLine();
+
+                Console.WriteLine("ketik " + bank.config.confirmation.id + " untuk mengkonfirmasi transaksi");
+                string input = Console.ReadLine();
+                if (input == bank.config.confirmation.en)
+                {
+                    Console.WriteLine("proses trasfer berhasil menggunakan " + transferMethod);
+                }
+                else
+                {
+                    Console.WriteLine("transfer dibatalkan");
+                }
             }
 
             
